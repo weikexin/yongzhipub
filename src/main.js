@@ -8,7 +8,7 @@ Vue.config.performance = true
 Vue.use(CoreuiVue)
 
 new Vue({
-  el: '#app',
+  el: '#app', 
   router,
   icons,
   template: '<App/>',

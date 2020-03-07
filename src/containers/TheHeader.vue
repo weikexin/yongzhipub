@@ -20,17 +20,22 @@
     <CHeaderNav class="d-md-down-none mr-auto">
       <CHeaderNavItem class="px-3">
         <CHeaderNavLink to="/dashboard">
-          Dashboard
+          切换工程
+        </CHeaderNavLink>
+      </CHeaderNavItem>
+      <CHeaderNavItem class="px-3">
+        <CHeaderNavLink to="/dashboard">
+          预览工程
         </CHeaderNavLink>
       </CHeaderNavItem>
       <CHeaderNavItem class="px-3">
         <CHeaderNavLink to="/users" exact>
-          Users
+          我的工程
         </CHeaderNavLink>
       </CHeaderNavItem>
       <CHeaderNavItem class="px-3">
         <CHeaderNavLink>
-          Settings
+          工程商店
         </CHeaderNavLink>
       </CHeaderNavItem>
     </CHeaderNav>

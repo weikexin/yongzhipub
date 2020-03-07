@@ -14,27 +14,28 @@ export default [
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Theme']
+        _children: ['快速上手']
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Colors',
+        name: '开发向导',
         to: '/theme/colors',
         icon: 'cil-drop'
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Typography',
+        name: '根据模板创建',
         to: '/theme/typography',
         icon: 'cil-pencil'
       },
       {
         _name: 'CSidebarNavTitle',
-        _children: ['Components']
+        to: '/theme/typography',
+        _children: ['当前工程（未创建）']
       },
       {
         _name: 'CSidebarNavDropdown',
-        name: 'Base',
+        name: '字典、配置项和定制',
         route: '/base',
         icon: 'cil-puzzle',
         items: [

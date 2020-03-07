@@ -82,7 +82,7 @@ function configRoutes () {
         {
           path: 'theme',
           redirect: '/theme/colors',
-          name: 'Theme',
+          name: '最近打开',
           component: {
             render (c) { return c('router-view') }
           },
