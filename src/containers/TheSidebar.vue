@@ -14,6 +14,7 @@
       class="d-md-down-none"
       @click.native="minimize = !minimize"
     />
+    
   </CSidebar>
 </template>
 

@@ -13,29 +13,54 @@ export default [
         }
       },
       {
-        _name: 'CSidebarNavTitle',
-        _children: ['快速上手']
-      },
-      {
         _name: 'CSidebarNavItem',
-        name: '开发向导',
-        to: '/theme/colors',
+        name: '快速上手',
+        to: '/quickstart',
         icon: 'cil-drop'
       },
       {
         _name: 'CSidebarNavItem',
         name: '根据模板创建',
-        to: '/theme/typography',
+        to: '/templateList',
         icon: 'cil-pencil'
       },
       {
         _name: 'CSidebarNavTitle',
+        to: '/bos',
+        _children: ['当前工程（default）']
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: '业务表',
+        to: '/bos',
+        icon: 'cil-chart-pie'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: '字典项',
+        to: '/charts',
+        icon: 'cil-chart-pie'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: '配置项',
+        to: '/charts',
+        icon: 'cil-chart-pie'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: '定制',
+        to: '/charts',
+        icon: 'cil-chart-pie'
+      },
+      {
+        _name: 'CSidebarNavTitle',
         to: '/theme/typography',
-        _children: ['当前工程（未创建）']
+        _children: ['base']
       },
       {
         _name: 'CSidebarNavDropdown',
-        name: '字典、配置项和定制',
+        name: 'base',
         route: '/base',
         icon: 'cil-puzzle',
         items: [

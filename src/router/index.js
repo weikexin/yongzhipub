@@ -6,6 +6,13 @@ const TheContainer = () => import('@/containers/TheContainer')
 
 // Views
 const Dashboard = () => import('@/views/Dashboard')
+const QuickStart = () => import('@/views/quickstart/QuickStart')
+const TemplateList = () => import('@/views/quickstart/TemplateList')
+const MyProjects = () => import('@/views/projects/MyProjects')
+
+const BoContainer = () => import('@/views/bos/BoContainer')
+const Bo = () => import('@/views/bos/Bo')
+const BoList = () => import('@/views/bos/BoList')
 
 const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
@@ -66,7 +73,7 @@ export default new Router({
   routes: configRoutes()
 })
 
-function configRoutes () {
+function configRoutes() {
   return [
     {
       path: '/',
@@ -80,25 +87,18 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'theme',
-          redirect: '/theme/colors',
-          name: '最近打开',
-          component: {
-            render (c) { return c('router-view') }
-          },
-          children: [
-            {
-              path: 'colors',
-              name: 'Colors',
-              component: Colors
-            },
-            {
-              path: 'typography',
-              name: 'Typography',
-              component: Typography
-            }
-          ]
+          path: 'quickstart',
+          name: 'quickstart',
+          meta: {label: '快速上手'},
+          component: QuickStart,
         },
+        {
+          path: 'templateList',
+          name: 'templateList',
+          meta: {label: '根据模板创建'},
+          component: TemplateList
+        },
+
         {
           path: 'charts',
           name: 'Charts',
@@ -110,10 +110,40 @@ function configRoutes () {
           component: Widgets
         },
         {
-          path: 'users',
-          meta: { label: 'Users'},
+          path: 'projects',
+          meta: { label: 'Projects' },
           component: {
-            render (c) { return c('router-view') }
+            render(c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: '',
+              component: MyProjects,
+            },
+          ]
+        },
+        {
+          path: 'bos',
+          meta: { label: '业务对象列表' },
+          component: BoContainer,
+          children: [
+            {
+              path: '',
+              component: BoList,
+            },
+            {
+              path: 'bo/:bouid',
+              name: 'bodetails',
+              meta: { label: '业务对象'},
+              component: Bo,
+            },
+          ]
+        },
+        {
+          path: 'users',
+          meta: { label: 'Users' },
+          component: {
+            render(c) { return c('router-view') }
           },
           children: [
             {
@@ -122,7 +152,7 @@ function configRoutes () {
             },
             {
               path: ':id',
-              meta: { label: 'User Details'},
+              meta: { label: 'User Details' },
               name: 'User',
               component: User,
             },
@@ -133,7 +163,7 @@ function configRoutes () {
           redirect: '/base/cards',
           name: 'Base',
           component: {
-            render (c) { return c('router-view') }
+            render(c) { return c('router-view') }
           },
           children: [
             {
@@ -223,7 +253,7 @@ function configRoutes () {
           redirect: '/buttons/standard-buttons',
           name: 'Buttons',
           component: {
-            render (c) { return c('router-view') }
+            render(c) { return c('router-view') }
           },
           children: [
             {
@@ -253,7 +283,7 @@ function configRoutes () {
           redirect: '/icons/coreui-icons',
           name: 'CoreUI Icons',
           component: {
-            render (c) { return c('router-view') }
+            render(c) { return c('router-view') }
           },
           children: [
             {
@@ -278,7 +308,7 @@ function configRoutes () {
           redirect: '/notifications/alerts',
           name: 'Notifications',
           component: {
-            render (c) { return c('router-view') }
+            render(c) { return c('router-view') }
           },
           children: [
             {
@@ -305,7 +335,7 @@ function configRoutes () {
       redirect: '/pages/404',
       name: 'Pages',
       component: {
-        render (c) { return c('router-view') }
+        render(c) { return c('router-view') }
       },
       children: [
         {
